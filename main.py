@@ -41,7 +41,7 @@ def main():
             obj.update(dt)
         
         for asteroid in asteroids:
-            if obj.collision(player):
+            if asteroid.collision(player):
                 print("Game Over")
                 sys.exit()
 
@@ -61,11 +61,6 @@ def main():
 
         # limit to 60 FPS
         dt = clock.tick(60) / 1000
-
-
-#    print("Starting asteroids!")
-#    print(f"Screen width: {SCREEN_WIDTH}")
-#    print(f"Screen height: {SCREEN_HEIGHT}")
 
 if __name__ == "__main__":
     main()
