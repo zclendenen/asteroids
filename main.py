@@ -3,6 +3,7 @@ from constants import SCREEN_HEIGHT, SCREEN_WIDTH
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from circleshape import CircleShape
 
 
 def main():
@@ -34,6 +35,9 @@ def main():
         
         for obj in updatable:
             obj.update(dt)
+        
+        for obj in asteroids:
+            obj.collisions(player, obj)
 
         screen.fill("black")
 
